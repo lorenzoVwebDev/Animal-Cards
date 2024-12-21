@@ -1,26 +1,26 @@
 import data from '../../data/data';
 import AnimalCard from '../AnimalCard/AnimalCard';
+import { showAdditional } from '../services/renderFunctions'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      {data.map(animal=> {
+        return (
+          <AnimalCard 
+            key={animal.key}
+            name={animal.name}
+            scientificName={animal.scientificName}
+            size={animal.size}
+            diet={animal.diet}
+            additional={animal.additional}
+            showAdditional={showAdditional}
+          />
+        )
+      })}
     </div>
-  );
+  )
 }
 
 export default App;

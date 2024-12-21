@@ -1,6 +1,6 @@
-# Animal Cards
+# Animals' Cards
 
-An animal cards project showing up animals information in a design powered up with bootstrap.
+An animals' cards project showing up animals information in a design powered up with bootstrap.
 
 ---
 
