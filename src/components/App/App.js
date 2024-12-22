@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="wrapper">
       {data.map(animal=> {
+        
         return (
           <AnimalCard 
             key={animal.key}
