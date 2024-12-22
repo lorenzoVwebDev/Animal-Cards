@@ -12,17 +12,21 @@ function convertFood(food) {
   }
 }
 
-function AnimalDetails({diet}) {
+function AnimalDetails({diet, href, description}) {
   return (
     <>
       <h4>Details</h4>
-      {
+      <h5>Diet
+      <p>{
         diet.map(food => {
           return convertFood(food)
         }).join(' ')
-      }
+      }</p>
+      </h5>
+      <h5>Description</h5>
+      <p>{description}</p>
       <br/>
-      <a href="https://it.wikipedia.org/wiki/Lion_-_La_strada_verso_casa" class="btn btn-primary">Know more</a>
+      <a href={href} class="btn btn-primary">Know more</a>
     </>
   )
 }

@@ -17,6 +17,9 @@ function App() {
             diet={animal.diet}
             additional={animal.additional}
             showAdditional={showAdditional}
+            href={animal.href}
+            imgurl={animal.imgurl}
+            description={animal.description}
           />
         )
       })}
