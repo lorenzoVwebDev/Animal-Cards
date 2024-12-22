@@ -5,9 +5,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="wrapper">
+    <div className="container text-center">
+      <div className="row">
       {data.map(animal=> {
-        
         return (
           <AnimalCard 
             key={animal.key}
@@ -20,6 +20,7 @@ function App() {
           />
         )
       })}
+      </div>
     </div>
   )
 }

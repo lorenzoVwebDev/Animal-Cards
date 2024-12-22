@@ -10,14 +10,15 @@ function AnimalCard({
   ...props
 }) {
   return (
-    <Card title="Animal" animalDetails={        <AnimalDetails 
-      {...props}
+    <div class="col">
+    <Card title="Animal" 
+    animalDetails={
+    <AnimalDetails {...props}
     />}>
-      <div>
-        <h3>{name}</h3>
-        <div>{size} kg</div>
-      </div>
+        <p className="card-text">{name}</p>
+        <p className="card-text">{size} kg</p>
     </Card>
+    </div>
   )
 }
 

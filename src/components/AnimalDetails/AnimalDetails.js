@@ -14,14 +14,16 @@ function convertFood(food) {
 
 function AnimalDetails({diet}) {
   return (
-    <div className="details">
+    <>
       <h4>Details</h4>
       {
         diet.map(food => {
           return convertFood(food)
         }).join(' ')
       }
-    </div>
+      <br/>
+      <a href="https://it.wikipedia.org/wiki/Lion_-_La_strada_verso_casa" class="btn btn-primary">Know more</a>
+    </>
   )
 }
 

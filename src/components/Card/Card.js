@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 function Card({ children, title, animalDetails}) {
   return (
     <div className="card">
-      <div className="card-details">
-        <h2>{title}</h2>
+      <img src="" className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
         {children}
         {animalDetails}
       </div>
