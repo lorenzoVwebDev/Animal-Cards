@@ -10,11 +10,13 @@ function AnimalCard({
   ...props
 }) {
   return (
-    <div class="col-4">
+    <div class="card">
     <Card title={name} 
     animalDetails={
     <AnimalDetails {...props}
     />}
+    name={name}
+    size={size}
     {...props}
     >
         <p className="card-text">{name}</p>

@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Card({ children, title, animalDetails, imgurl}) {
+function Card({ children, title, animalDetails, imgurl, name}) {
   return (
-    <div className="card">
-      <img src={imgurl} className="card-img-top" alt="..." />
+    <>
+      <div className="image-container">
+      <img src={imgurl} className="card-img" alt={name} />
+      </div>
       <div className="card-body">
-        <h5 className="card-title">{title}</h5>
+        <h3 className="card-title">{title}</h3>
         {children}
         {animalDetails}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -8,12 +8,12 @@ function App() {
     <>
     <header>
     </header>
-    <div className="container-flex main-container">
-    <div className="img-container">
+    <div className="main-container">
+{/*     <div className="img-container">
     <img src="https://static.vecteezy.com/system/resources/previews/024/361/112/non_2x/waterfall-in-a-tropical-jungle-generative-ai-free-photo.jpg" alt="" />
-    </div> 
-    <div className="col align-self-center" id="cards-container">
-      <div className="row">
+    </div> */} 
+    
+      <div className="cards-container">
       {data.map(animal=> {
         return (
           <AnimalCard 
@@ -30,7 +30,6 @@ function App() {
           />
         )
       })}
-    </div>
     </div>
     </div>
     </>
