@@ -26,7 +26,7 @@ function AnimalDetails({diet, href, description}) {
       <h5>Description</h5>
       <p>{description}</p>
       <br/>
-      <a href={href} class="btn btn-primary">Know more</a>
+      <a href={href} className="btn btn-primary">Know more</a>
     </>
   )
 }

@@ -1,11 +1,18 @@
 import data from '../../data/data';
 import AnimalCard from '../AnimalCard/AnimalCard';
 import { showAdditional } from '../services/renderFunctions'
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
-    <div className="container text-center">
+    <>
+    <header>
+    </header>
+    <div className="container-flex main-container">
+    <div className="img-container">
+    <img src="https://static.vecteezy.com/system/resources/previews/024/361/112/non_2x/waterfall-in-a-tropical-jungle-generative-ai-free-photo.jpg" alt="" />
+    </div> 
+    <div className="col align-self-center" id="cards-container">
       <div className="row">
       {data.map(animal=> {
         return (
@@ -23,8 +30,10 @@ function App() {
           />
         )
       })}
-      </div>
     </div>
+    </div>
+    </div>
+    </>
   )
 }
 

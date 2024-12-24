@@ -10,7 +10,7 @@ function AnimalCard({
   ...props
 }) {
   return (
-    <div class="col">
+    <div class="col-4">
     <Card title={name} 
     animalDetails={
     <AnimalDetails {...props}
