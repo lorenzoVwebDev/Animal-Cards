@@ -1,22 +1,27 @@
 import React from 'react';
+import AnimalDetails from '../AnimalDetails/AnimalDetails';
+import Card from '../Card/Card';
 import './AnimalCard.css';
 import PropTypes from 'prop-types';
 
 function AnimalCard({
   name,
-  scientificName,
   size,
-  diet,
-  additional,
-  showAdditional
+  ...props
 }) {
   return (
-    <div className="wrapper">
-      <h2>{name}</h2>
-      <h3>{scientificName}</h3>
-      <h3>{size}kg</h3>
-      <div>{diet.join(', ')}</div>
-      {additional && <input type="button" onClick={() => showAdditional(additional)} value='Additionals'/>}
+    <div className="card">
+    <Card title={name} 
+    animalDetails={
+    <AnimalDetails {...props}
+    />}
+    name={name}
+    size={size}
+    {...props}
+    >
+        <p className="card-text">{name}</p>
+        <p className="card-text">{size} kg</p>
+    </Card>
     </div>
   )
 }
