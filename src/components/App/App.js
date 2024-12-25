@@ -7,6 +7,7 @@ function App() {
   return (
     <>
     <header>
+      git Repository 👉🏻 <a href="https://github.com/lorenzoVwebDev/Animal-Cards">Animals-card</a>
     </header>
     <div className="main-container">
 {/*     <div className="img-container">

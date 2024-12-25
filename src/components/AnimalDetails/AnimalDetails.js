@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 function convertFood(food) {
@@ -14,23 +14,45 @@ function convertFood(food) {
 
 function AnimalDetails({diet, href, description}) {
   const [ expanded, setExpanded ] = useState(false);
+  const [ resized, setResized ] = useState(false);
+
+  window.addEventListener('resize', () => {
+    if (document.querySelector('.description-container.expanded') && document.querySelector('.card.expanded')) {
+      const cardBody = document.querySelector('.description-container.expanded')
+      const card = document.querySelector('.card.expanded')
+      cardBody.style.height = '25vw';
+      card.style.height = '85vw';
+      cardBody.classList.toggle('expanded');
+      card.classList.toggle('expanded');
+      console.log('hello world')
+    } 
+
+    setExpanded(false)
+  })
   
   const expandDescritpion = (event) => {
+    const viewportHeight = window.innerHeight;
+    const card = event.currentTarget.parentElement.parentElement;
     const cardBody = event.currentTarget.parentElement;
-/*     if (expanded === false) {
-      console.log(expanded)
-      console.dir(cardBody.style);
-      cardBody.children[6].style.overflowY = "auto";
-      cardBody.children[6].style.height = "100%";
-      setExpanded(true)
+    const check = event.currentTarget.children[0];
+    console.log(expanded)
+    if (expanded === false) {
+      console.dir(card)
+      check.checked = true;
+      setExpanded(true);
+      cardBody.children[6].style.height = `${(cardBody.children[6].scrollHeight / viewportHeight)*100}vh`;
+      card.style.height = `${((card.clientHeight -card.children[0].clientHeight+ cardBody.children[6].scrollHeight)/(viewportHeight))*100}vh`;
+    }  else {
+      cardBody.children[6].style.height = `25vw`;
+      card.style.height = `85vw`
+      check.checked = false;
+      setExpanded(false);
+    }
 
-    } else {
-      console.log(expanded)
-      cardBody.children[6].style.overflowY = "auto";
-      cardBody.children[6].style.height = "25vw";
-      setExpanded(false)
-    } */
-    cardBody.children[6].classList.toggle('expanded')
+    console.log(expanded)
+    card.classList.toggle('expanded')
+   console.dir()
+    cardBody.children[6].classList.toggle('expanded') 
   }
   return (
     <>
@@ -49,7 +71,11 @@ function AnimalDetails({diet, href, description}) {
 
       </div>
       <br/>
-      <button className="expand-button" onClick={(event) => {expandDescritpion(event)}}>Expand</button>
+      <button className="expand-button" onClick={(event) => {expandDescritpion(event)}}>Expand<input type="radio" style={
+        {
+          display: 'none'
+        }
+      } class="hidden-radio"></input></button>
       <button className="know-more-button"><a href={href} className="btn btn-primary">Know more</a></button>
     </>
   )

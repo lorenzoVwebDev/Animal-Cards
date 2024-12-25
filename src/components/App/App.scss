@@ -28,7 +28,17 @@ body {
   background-color: var(--color-bg);  
   font-family: "Luminari";
 }
-
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.2vw;
+  background-color: red;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  font-size: var(--title-fontsize)
+}
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(3rem, auto));
@@ -49,9 +59,14 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background-color: var(--second-color-bg);
-  transition: all 0.5s;
+  transition: all 0.8s;
+
 }
 
+ .card.expanded {
+  height: fit-content;
+}
+ 
 .card:hover {
   transform: scale(1.04); 
 }
@@ -74,12 +89,20 @@ body {
   overflow: hidden; 
   height: 25vw;
   overflow-y: auto;
-  transition: all 1s linear;
+  transition: all 0.8s;
 }
 
-.card .card-body .description-container.expanded {
+/* .card .card-body .description-container.expanded { 
   height: 100%;
 }
+ */
+
+/* .card.expanded:has(.hidden-radio:checked, .description-container.expanded) {
+  & .description-container.expanded {
+     animation: expanding 1s ease-in forwards; 
+     height: 100%;  
+  }
+} */
 
 .card .card-body .expand-button {
   background-color: #18adf2;
@@ -138,7 +161,7 @@ body {
 .image-container {
   display: flex;
   width: auto;
-  height: auto;
+  height: 15vw;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
