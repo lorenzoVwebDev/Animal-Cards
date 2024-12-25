@@ -24,36 +24,33 @@ function AnimalDetails({diet, href, description}) {
       card.style.height = '85vw';
       cardBody.classList.toggle('expanded');
       card.classList.toggle('expanded');
-      console.log('hello world')
     } 
 
     setExpanded(false)
   })
-  
-  const expandDescritpion = (event) => {
+
+  const expandDescription = (event) => {
     const viewportHeight = window.innerHeight;
     const card = event.currentTarget.parentElement.parentElement;
     const cardBody = event.currentTarget.parentElement;
-    const check = event.currentTarget.children[0];
-    console.log(expanded)
+/*     const check = event.currentTarget.children[0]; */
     if (expanded === false) {
-      console.dir(card)
-      check.checked = true;
+/*       check.checked = true; */
       setExpanded(true);
       cardBody.children[6].style.height = `${(cardBody.children[6].scrollHeight / viewportHeight)*100}vh`;
       card.style.height = `${((card.clientHeight -card.children[0].clientHeight+ cardBody.children[6].scrollHeight)/(viewportHeight))*100}vh`;
     }  else {
       cardBody.children[6].style.height = `25vw`;
       card.style.height = `85vw`
-      check.checked = false;
+/*       check.checked = false; */
       setExpanded(false);
     }
-
-    console.log(expanded)
+  
     card.classList.toggle('expanded')
-   console.dir()
     cardBody.children[6].classList.toggle('expanded') 
   }
+  
+  
   return (
     <>
       <h4>Details</h4>
@@ -71,12 +68,12 @@ function AnimalDetails({diet, href, description}) {
 
       </div>
       <br/>
-      <button className="expand-button" onClick={(event) => {expandDescritpion(event)}}>Expand<input type="radio" style={
+      <button className="expand-button" onClick={(event) => {expandDescription(event)}}>Expand{/* <input type="radio" style={
         {
           display: 'none'
         }
-      } class="hidden-radio"></input></button>
-      <button className="know-more-button"><a href={href} className="btn btn-primary">Know more</a></button>
+      } class="hidden-radio"></input> */}</button>
+      <button className="know-more-button"><a href={href} className="btn btn-primary" target="__blank">Know more</a></button>
     </>
   )
 }
