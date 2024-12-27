@@ -7,6 +7,8 @@ An animals' cards project showing up animals information in a design powered up 
 ## Features
 
 - Props usage to showing up animals information in the cards
+- Responsive layout
+- [Powered with js to handle text expansion](https://github.com/lorenzoVwebDev/Animal-Cards/blob/master/src/components/AnimalDetails/AnimalDetails.js)
 
 ---
 ### You can find this project here on my personal portfolio --> [lorenzo-viganego.com](https://www.lorenzo-viganego.com/#portfolio)
