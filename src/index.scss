@@ -20,17 +20,18 @@
 $bg-color: #250821;
 $secondbg-color: #f5f5f5;
 
-@font-face {
+/* @font-face {
   font-family: 'Luminari';
   src: url('../../fonts/luminari/Luminari-Regular.woff');
   font-weight: normal;
   font-style: normal;
 }
-
+ */
 body {
   background-color: var(--color-bg);  
   font-family: var(--fontfamily-title);
 }
+
 header {
   display: flex;
   justify-content: center;
@@ -42,6 +43,11 @@ header {
   border-bottom-width: 2px;
   font-size: var(--title-fontsize);
   color: #282828;
+}
+.main-container {
+  position: absolute;
+  top: -2vw;
+  transform: scale(0.8);
 }
 .cards-container {
   display: grid;
@@ -200,3 +206,28 @@ header {
   }
 } */
 
+@media (max-width: 700px) {
+
+  .main-container {
+    position:static;
+  }
+  .cards-container {
+    grid-template-columns: repeat(1, 50vw);
+    column-gap: 3%;
+    row-gap: 3%;
+    margin-top: -20%;
+  /*   grid-auto-rows: minmax(200px, 200px); */
+  }
+  
+}
+
+@media (max-width: 420px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(1, 65vw);
+
+
+  /*   grid-auto-rows: minmax(200px, 200px); */
+  }
+  
+}
