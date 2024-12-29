@@ -1,7 +1,6 @@
 import data from '../../data/data';
 import AnimalCard from '../AnimalCard/AnimalCard';
 import { showAdditional } from '../services/renderFunctions'
-import './App.scss';
 
 function App() {
   return (
